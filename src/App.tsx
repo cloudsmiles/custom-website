@@ -29,7 +29,9 @@ import {
   BookOpen,
   MessageCircle,
   Database,
-  Activity
+  Activity,
+  Menu,
+  X
 } from 'lucide-react';
 import { translations, attributesConfig, defaultLang } from './i18n';
 
@@ -167,15 +169,15 @@ const TravelerTab = ({ lang }: { lang: string }) => {
       </div>
 
       <div className="space-y-8">
-        <h1 className="text-7xl md:text-8xl font-display tracking-tighter text-white">Winnie</h1>
-        <div className="flex justify-center items-center gap-12 font-serif italic-serif text-3xl text-[#f1e4d1]">
-          <span className="flex items-center gap-4 group cursor-default">
-            <MapPin size={28} className="text-[#d4af37] group-hover:text-white transition-colors drop-shadow-[0_0_10px_#d4af37]" /> 
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display tracking-tighter text-white">Winnie</h1>
+        <div className="flex justify-center items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 font-serif italic-serif text-xl sm:text-2xl md:text-3xl text-[#f1e4d1] flex-wrap px-4">
+          <span className="flex items-center gap-2 sm:gap-3 md:gap-4 group cursor-default">
+            <MapPin size={20} className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-[#d4af37] group-hover:text-white transition-colors drop-shadow-[0_0_10px_#d4af37]" /> 
             {t.location}
           </span>
-          <span className="text-[#d4af37] opacity-50 text-4xl drop-shadow-[0_0_15px_#d4af37]">◈</span>
-          <span className="flex items-center gap-4 group cursor-default">
-            <Star size={28} className="text-[#d4af37] group-hover:text-white transition-colors drop-shadow-[0_0_10px_#d4af37]" /> 
+          <span className="text-[#d4af37] opacity-50 text-2xl sm:text-3xl md:text-4xl drop-shadow-[0_0_15px_#d4af37]">◈</span>
+          <span className="flex items-center gap-2 sm:gap-3 md:gap-4 group cursor-default">
+            <Star size={20} className="sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-[#d4af37] group-hover:text-white transition-colors drop-shadow-[0_0_10px_#d4af37]" /> 
             {t.level}
           </span>
         </div>
@@ -199,9 +201,9 @@ const TravelerTab = ({ lang }: { lang: string }) => {
 
     <section className="grid grid-cols-1 md:grid-cols-2 gap-24">
       <div className="space-y-14">
-        <div className="flex items-center gap-8">
-          <div className="w-4 h-4 border-2 border-[#d4af37] rotate-45 shadow-[0_0_10px_#d4af37]" />
-          <h2 className="text-4xl whitespace-nowrap tracking-widest">{t.attributes}</h2>
+        <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+          <div className="w-3 h-3 sm:w-4 sm:h-4 border-2 border-[#d4af37] rotate-45 shadow-[0_0_10px_#d4af37]" />
+          <h2 className="text-2xl sm:text-3xl md:text-4xl whitespace-nowrap tracking-widest">{t.attributes}</h2>
           <div className="h-px w-full bg-gradient-to-r from-[#d4af37]/60 via-[#d4af37]/20 to-transparent" />
         </div>
         <div className="space-y-8">
@@ -213,14 +215,14 @@ const TravelerTab = ({ lang }: { lang: string }) => {
         </div>
       </div>
       <div className="space-y-14">
-        <div className="flex items-center gap-8">
-          <div className="w-4 h-4 border-2 border-[#d4af37] rotate-45 shadow-[0_0_10px_#d4af37]" />
-          <h2 className="text-4xl whitespace-nowrap tracking-widest">{t.biography}</h2>
+        <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+          <div className="w-3 h-3 sm:w-4 sm:h-4 border-2 border-[#d4af37] rotate-45 shadow-[0_0_10px_#d4af37]" />
+          <h2 className="text-2xl sm:text-3xl md:text-4xl whitespace-nowrap tracking-widest">{t.biography}</h2>
           <div className="h-px w-full bg-gradient-to-r from-[#d4af37]/60 via-[#d4af37]/20 to-transparent" />
         </div>
         <div className="relative">
-          <div className="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-[#d4af37]/60 via-transparent to-[#d4af37]/60" />
-          <p className="font-serif leading-relaxed text-3xl italic text-white pl-6 drop-shadow-sm">
+          <div className="absolute -left-4 sm:-left-8 top-0 bottom-0 w-px bg-gradient-to-b from-[#d4af37]/60 via-transparent to-[#d4af37]/60" />
+          <p className="font-serif leading-relaxed text-lg sm:text-xl md:text-2xl lg:text-3xl italic text-white pl-4 sm:pl-6 drop-shadow-sm">
             {t.bioText}
           </p>
         </div>
@@ -235,12 +237,12 @@ const SkillsTab = ({ lang }: { lang: string }) => {
   
   return (
   <div className="octo-flow py-12">
-    <div className="text-center mb-20 space-y-6">
-      <h2 className="text-4xl tracking-widest">{t.skillsTitle}</h2>
+    <div className="text-center mb-12 sm:mb-16 md:mb-20 space-y-4 sm:space-y-6">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl tracking-widest">{t.skillsTitle}</h2>
       <div className="flex justify-center">
-        <div className="w-24 h-px bg-gradient-to-r from-transparent via-[#8b7355] to-transparent" />
+        <div className="w-16 sm:w-20 md:w-24 h-px bg-gradient-to-r from-transparent via-[#8b7355] to-transparent" />
       </div>
-      <p className="font-serif italic-serif text-xl">{t.skillsDesc}</p>
+      <p className="font-serif italic-serif text-base sm:text-lg md:text-xl px-4">{t.skillsDesc}</p>
     </div>
 
     <div className="space-y-4">
@@ -258,18 +260,18 @@ const SkillsTab = ({ lang }: { lang: string }) => {
           viewport={{ once: true }}
           transition={{ delay: idx * 0.1 }}
           key={skill.name} 
-          className="octo-list-item flex gap-12 items-start group"
+          className="octo-list-item flex gap-4 sm:gap-8 md:gap-12 items-start group px-3 sm:px-4 md:px-0"
         >
-          <div className="w-16 h-16 flex items-center justify-center shrink-0 border border-[#8b7355]/10 group-hover:border-[#8b7355]/40 transition-all duration-500 bg-[#1a1612] relative">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 border border-[#8b7355]/10 group-hover:border-[#8b7355]/40 transition-all duration-500 bg-[#1a1612] relative">
             <div className="absolute inset-0 bg-[#8b7355]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <skill.icon size={36} strokeWidth={1} className="text-[#8b7355] group-hover:text-[#f1e4d1] transition-colors" />
+            <skill.icon size={24} strokeWidth={1} className="sm:w-7 sm:h-7 md:w-9 md:h-9 text-[#8b7355] group-hover:text-[#f1e4d1] transition-colors" />
           </div>
-          <div className="flex-1 space-y-3">
+          <div className="flex-1 space-y-2 sm:space-y-3">
             <div className="flex justify-between items-baseline">
-              <h3 className="text-2xl text-[#f1e4d1] group-hover:text-white transition-colors">{skill.name}</h3>
-              <span className="font-display text-[10px] text-[#8b7355] tracking-[0.3em] uppercase">{skill.type}</span>
+              <h3 className="text-lg sm:text-xl md:text-2xl text-[#f1e4d1] group-hover:text-white transition-colors">{skill.name}</h3>
+              <span className="font-display text-[8px] sm:text-[10px] text-[#8b7355] tracking-[0.3em] uppercase">{skill.type}</span>
             </div>
-            <p className="font-serif text-xl text-[#d4c4a8]/70 leading-relaxed group-hover:text-[#d4c4a8] transition-colors">{skill.desc}</p>
+            <p className="font-serif text-sm sm:text-base md:text-lg lg:text-xl text-[#d4c4a8]/70 leading-relaxed group-hover:text-[#d4c4a8] transition-colors">{skill.desc}</p>
           </div>
         </motion.div>
       ))}
@@ -283,12 +285,12 @@ const ProjectsTab = ({ lang }: { lang: string }) => {
   
   return (
   <div className="octo-flow py-12">
-    <div className="text-center mb-20 space-y-6">
-      <h2 className="text-4xl tracking-widest">{t.projectsTitle}</h2>
+    <div className="text-center mb-12 sm:mb-16 md:mb-20 space-y-4 sm:space-y-6">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl tracking-widest">{t.projectsTitle}</h2>
       <div className="flex justify-center">
-        <div className="w-24 h-px bg-gradient-to-r from-transparent via-[#8b7355] to-transparent" />
+        <div className="w-16 sm:w-20 md:w-24 h-px bg-gradient-to-r from-transparent via-[#8b7355] to-transparent" />
       </div>
-      <p className="font-serif italic-serif text-xl">{t.projectsDesc}</p>
+      <p className="font-serif italic-serif text-base sm:text-lg md:text-xl px-4">{t.projectsDesc}</p>
     </div>
 
     <div className="space-y-20">
@@ -306,19 +308,19 @@ const ProjectsTab = ({ lang }: { lang: string }) => {
           rel="noopener noreferrer"
           className="space-y-8 group cursor-pointer relative block no-underline"
         >
-          <div className="flex items-center gap-8">
-            <span className="font-display text-3xl text-[#8b7355]/30 group-hover:text-[#8b7355] transition-all duration-500 group-hover:scale-110">{project.id}</span>
+          <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+            <span className="font-display text-xl sm:text-2xl md:text-3xl text-[#8b7355]/30 group-hover:text-[#8b7355] transition-all duration-500 group-hover:scale-110">{project.id}</span>
             <div className="h-px flex-1 bg-gradient-to-r from-[#8b7355]/20 via-[#8b7355]/40 to-transparent group-hover:via-[#8b7355] transition-all duration-700" />
-            <span className="font-display text-[10px] text-[#8b7355] tracking-[0.4em] uppercase">{project.date}</span>
+            <span className="font-display text-[8px] sm:text-[10px] text-[#8b7355] tracking-[0.4em] uppercase whitespace-nowrap">{project.date}</span>
           </div>
-          <div className="pl-16 space-y-6">
-            <h3 className="text-3xl text-[#f1e4d1] group-hover:translate-x-4 transition-transform duration-500 inline-block relative">
+          <div className="pl-12 sm:pl-14 md:pl-16 space-y-4 sm:space-y-6">
+            <h3 className="text-xl sm:text-2xl md:text-3xl text-[#f1e4d1] group-hover:translate-x-4 transition-transform duration-500 inline-block relative">
               {project.title}
               <div className="absolute -bottom-2 left-0 w-0 h-px bg-[#8b7355] group-hover:w-full transition-all duration-700" />
             </h3>
-            <p className="font-serif text-xl text-[#d4c4a8]/70 leading-relaxed max-w-2xl group-hover:text-[#d4c4a8] transition-colors">{project.desc}</p>
-            <div className="flex items-center gap-3 text-[#8b7355] font-display text-[10px] tracking-[0.4em] opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all duration-500">
-              {t.readChronicle} <ChevronRight size={12} className="animate-pulse" />
+            <p className="font-serif text-sm sm:text-base md:text-lg lg:text-xl text-[#d4c4a8]/70 leading-relaxed group-hover:text-[#d4c4a8] transition-colors">{project.desc}</p>
+            <div className="flex items-center gap-2 sm:gap-3 text-[#8b7355] font-display text-[8px] sm:text-[10px] tracking-[0.4em] opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all duration-500">
+              {t.readChronicle} <ChevronRight size={10} className="sm:w-3 sm:h-3 md:w-4 md:h-4 animate-pulse" />
             </div>
           </div>
         </motion.a>
@@ -333,39 +335,39 @@ const ContactTab = ({ lang }: { lang: string }) => {
   
   return (
     <div className="octo-flow py-12">
-    <div className="text-center mb-20 space-y-6">
-      <h2 className="text-4xl tracking-widest">{t.contactTitle}</h2>
+    <div className="text-center mb-12 sm:mb-16 md:mb-20 space-y-4 sm:space-y-6">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl tracking-widest">{t.contactTitle}</h2>
       <div className="flex justify-center">
-        <div className="w-24 h-px bg-gradient-to-r from-transparent via-[#8b7355] to-transparent" />
+        <div className="w-16 sm:w-20 md:w-24 h-px bg-gradient-to-r from-transparent via-[#8b7355] to-transparent" />
       </div>
-      <p className="font-serif italic-serif text-xl">{t.contactDesc}</p>
+      <p className="font-serif italic-serif text-base sm:text-lg md:text-xl px-4">{t.contactDesc}</p>
     </div>
 
-    <div className="max-w-2xl mx-auto space-y-20">
-      <form className="space-y-12" onSubmit={(e) => e.preventDefault()}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-3 group">
-            <label className="font-display text-[10px] text-[#8b7355] tracking-[0.4em] uppercase">{t.nameLabel}</label>
+    <div className="max-w-2xl mx-auto space-y-12 sm:space-y-16 md:space-y-20 px-4 sm:px-0">
+      <form className="space-y-8 sm:space-y-10 md:space-y-12" onSubmit={(e) => e.preventDefault()}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
+          <div className="space-y-2 sm:space-y-3 group">
+            <label className="font-display text-[9px] sm:text-[10px] text-[#8b7355] tracking-[0.4em] uppercase">{t.nameLabel}</label>
             <input 
               type="text" 
               placeholder={t.namePlaceholder}
-              className="w-full bg-transparent border-b border-[#8b7355]/20 py-3 font-serif text-xl text-[#f1e4d1] focus:border-[#f1e4d1] outline-none transition-all duration-500 placeholder:text-[#8b7355]/30" 
+              className="w-full bg-transparent border-b border-[#8b7355]/20 py-2 sm:py-3 font-serif text-base sm:text-lg md:text-xl text-[#f1e4d1] focus:border-[#f1e4d1] outline-none transition-all duration-500 placeholder:text-[#8b7355]/30" 
             />
           </div>
-          <div className="space-y-3 group">
-            <label className="font-display text-[10px] text-[#8b7355] tracking-[0.4em] uppercase">{t.addressLabel}</label>
+          <div className="space-y-2 sm:space-y-3 group">
+            <label className="font-display text-[9px] sm:text-[10px] text-[#8b7355] tracking-[0.4em] uppercase">{t.addressLabel}</label>
             <input 
               type="email" 
               placeholder={t.addressPlaceholder}
-              className="w-full bg-transparent border-b border-[#8b7355]/20 py-3 font-serif text-xl text-[#f1e4d1] focus:border-[#f1e4d1] outline-none transition-all duration-500 placeholder:text-[#8b7355]/30" 
+              className="w-full bg-transparent border-b border-[#8b7355]/20 py-2 sm:py-3 font-serif text-base sm:text-lg md:text-xl text-[#f1e4d1] focus:border-[#f1e4d1] outline-none transition-all duration-500 placeholder:text-[#8b7355]/30" 
             />
           </div>
         </div>
-        <div className="space-y-3 group">
-          <label className="font-display text-[10px] text-[#8b7355] tracking-[0.4em] uppercase">{t.messageLabel}</label>
+        <div className="space-y-2 sm:space-y-3 group">
+          <label className="font-display text-[9px] sm:text-[10px] text-[#8b7355] tracking-[0.4em] uppercase">{t.messageLabel}</label>
           <textarea 
             placeholder={t.messagePlaceholder}
-            className="w-full bg-transparent border-b border-[#8b7355]/20 py-3 font-serif text-xl text-[#f1e4d1] focus:border-[#f1e4d1] outline-none h-40 resize-none transition-all duration-500 placeholder:text-[#8b7355]/30" 
+            className="w-full bg-transparent border-b border-[#8b7355]/20 py-2 sm:py-3 font-serif text-base sm:text-lg md:text-xl text-[#f1e4d1] focus:border-[#f1e4d1] outline-none h-32 sm:h-40 resize-none transition-all duration-500 placeholder:text-[#8b7355]/30" 
           />
         </div>
         <div className="text-center">
@@ -384,7 +386,7 @@ const ContactTab = ({ lang }: { lang: string }) => {
 
       <div className="octo-divider" />
 
-      <div className="flex justify-center gap-20">
+      <div className="flex justify-center gap-12 sm:gap-16 md:gap-20 flex-wrap">
         {[
           { Icon: Github, label: 'GITHUB', href: 'https://github.com/cloudsmiles' },
           { Icon: Linkedin, label: 'LINKEDIN', href: '#' },
@@ -395,10 +397,10 @@ const ContactTab = ({ lang }: { lang: string }) => {
             href={href}
             target={href !== '#' ? '_blank' : undefined}
             rel={href !== '#' ? 'noopener noreferrer' : undefined}
-            className="group flex flex-col items-center gap-4 text-[#8b7355] hover:text-[#f1e4d1] transition-all"
+            className="group flex flex-col items-center gap-3 sm:gap-4 text-[#8b7355] hover:text-[#f1e4d1] transition-all"
           >
-            <Icon size={28} strokeWidth={1} className="group-hover:scale-125 transition-transform duration-500" />
-            <span className="font-display text-[8px] tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity duration-500">{label}</span>
+            <Icon size={24} strokeWidth={1} className="sm:w-7 sm:h-7 md:w-8 md:h-8 group-hover:scale-125 transition-transform duration-500" />
+            <span className="font-display text-[7px] sm:text-[8px] md:text-[10px] tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity duration-500">{label}</span>
           </a>
         ))}
       </div>
@@ -412,6 +414,7 @@ const ContactTab = ({ lang }: { lang: string }) => {
 export default function App() {
   const [activeTab, setActiveTab] = useState('traveler');
   const [lang, setLang] = useState(defaultLang);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const t = translations[lang as keyof typeof translations];
 
   const tabs = [
@@ -439,39 +442,111 @@ export default function App() {
       <div className="particles" />
 
       {/* Corner Ornaments */}
-      <div className="corner-ornament corner-tl m-10" />
-      <div className="corner-ornament corner-tr m-10" />
-      <div className="corner-ornament corner-bl m-10" />
-      <div className="corner-ornament corner-br m-10" />
+      <div className="corner-ornament corner-tl m-4 sm:m-6 md:m-8 lg:m-10" />
+      <div className="corner-ornament corner-tr m-4 sm:m-6 md:m-8 lg:m-10" />
+      <div className="corner-ornament corner-bl m-4 sm:m-6 md:m-8 lg:m-10" />
+      <div className="corner-ornament corner-br m-4 sm:m-6 md:m-8 lg:m-10" />
       
       {/* Header / Tabs */}
-      <header className="relative z-[60] mb-40 flex flex-wrap gap-20 justify-center items-center">
-        {tabs.map((tab) => (
+      <header className="relative z-[60] mb-20 md:mb-40">
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex flex-col gap-8 px-0">
+          {/* Tab Navigation */}
+          <div className="flex gap-8 lg:gap-12 justify-center">
+            {tabs.map((tab) => (
+              <motion.button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                whileHover={{ y: -5 }}
+                whileTap={{ y: 2, scale: 0.98 }}
+                className={`octo-tab group ${activeTab === tab.id ? 'octo-tab-active' : ''}`}
+              >
+                <span className="relative z-10">{tab.label}</span>
+                <div className="absolute inset-0 bg-[#d4af37]/10 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-700" />
+              </motion.button>
+            ))}
+          </div>
+          
+          {/* Language Switcher */}
           <motion.button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            whileHover={{ y: -5 }}
-            whileTap={{ y: 2 }}
-            className={`octo-tab group ${activeTab === tab.id ? 'octo-tab-active' : ''}`}
+            onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="octo-btn px-8 py-3 flex items-center gap-3 mx-auto"
           >
-            <span className="relative z-10">{tab.label}</span>
-            <div className="absolute inset-0 bg-[#d4af37]/10 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-700" />
+            <Globe size={18} strokeWidth={1.5} />
+            <span>{langLabels[lang as keyof typeof langLabels]}</span>
           </motion.button>
-        ))}
-        
-        {/* Language Switcher */}
-        <motion.button
-          onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="octo-btn px-8 py-3 flex items-center gap-3"
-        >
-          <Globe size={18} strokeWidth={1.5} />
-          <span>{langLabels[lang as keyof typeof langLabels]}</span>
-        </motion.button>
-      </header>
+        </div>
 
-      {/* Main Content Area */}
+        {/* Mobile Navigation */}
+        <div className="md:hidden relative">
+          {/* Top Bar with Hamburger and Language Icon */}
+          <div className="flex justify-between items-center px-4">
+            {/* Hamburger Button */}
+            <motion.button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              whileTap={{ scale: 0.95 }}
+              className="p-2 text-[#d4af37] hover:text-white transition-colors"
+            >
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </motion.button>
+
+            {/* Language Switcher Icon */}
+            <motion.button
+              onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
+              whileTap={{ scale: 0.95 }}
+              className="p-2 text-[#d4af37] hover:text-white transition-colors relative"
+            >
+              <Globe size={24} strokeWidth={1.5} />
+              <span className="absolute -bottom-1 -right-1 text-[10px] font-display font-bold text-white bg-[#d4af37] rounded-sm px-1">
+                {lang === 'zh' ? '中' : 'E'}
+              </span>
+            </motion.button>
+          </div>
+
+          {/* Mobile Menu Dropdown */}
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className="bg-[#2d241a]/95 backdrop-blur-sm border-t border-[#d4af37]/20 overflow-hidden"
+              >
+                <div className="py-4 space-y-2">
+                  {tabs.map((tab) => (
+                    <motion.button
+                      key={tab.id}
+                      onClick={() => {
+                        setActiveTab(tab.id);
+                        setIsMobileMenuOpen(false);
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                      className={`w-full text-left px-6 py-4 flex items-center gap-4 transition-all ${
+                        activeTab === tab.id
+                          ? 'text-white bg-[#d4af37]/10 border-l-4 border-[#d4af37]'
+                          : 'text-[#d4c4a8] border-l-4 border-transparent hover:bg-[#d4af37]/5'
+                      }`}
+                    >
+                      <tab.icon 
+                        size={20} 
+                        strokeWidth={1.5} 
+                        className={activeTab === tab.id ? 'text-[#d4af37]' : 'text-[#8b7355]'} 
+                      />
+                      <span className="font-display text-sm tracking-widest uppercase">{tab.label}</span>
+                      {activeTab === tab.id && (
+                        <ChevronRight size={16} className="ml-auto text-[#d4af37]" />
+                      )}
+                    </motion.button>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </header>
       <main className="relative z-10">
         <AnimatePresence mode="wait">
           <motion.div
