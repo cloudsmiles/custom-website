@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cinzel", serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+body {
+  background-color: #1a1612;
+  color: #d4c4a8;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Octopath Traveler HD-2D Aesthetic - Bright & Shimmering */
+.octo-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: 
+    radial-gradient(circle at center, transparent 0%, rgba(255,248,230,0.1) 100%),
+    linear-gradient(to bottom, #2d241a 0%, #4a3d2c 100%);
+  padding: 6rem 2rem;
+  overflow: hidden;
+}
+
+/* Parchment Texture Overlay - Lighter */
+.parchment {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.08;
+  pointer-events: none;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  mix-blend-mode: overlay;
+}
+
+/* Vignette Effect - Warmer */
+.vignette {
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 50% 50%, transparent 40%, rgba(45, 36, 26, 0.4) 90%),
+    radial-gradient(circle at 50% 50%, transparent 0%, rgba(74, 61, 44, 0.6) 130%);
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Tyndall Effect (God Rays) - Dynamic & Glowing */
+.tyndall-container {
+  position: fixed;
+  inset: -10%;
+  pointer-events: none;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.tyndall-beam {
+  position: absolute;
+  top: -10%;
+  left: 15%;
+  width: 35vw;
+  height: 200vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 245, 200, 0.25) 0%,
+    rgba(255, 245, 200, 0.08) 30%,
+    transparent 70%
+  );
+  /* Mask to keep the beam shape (soft edges on sides) */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 50%,
+    transparent 100%
+  );
+  transform-origin: top center;
+  transform: rotate(-35deg);
+  filter: blur(90px);
+  mix-blend-mode: screen;
+  animation: 
+    sway 35s ease-in-out infinite alternate,
+    pulse-glow 25s ease-in-out infinite alternate;
+}
+
+.tyndall-beam:nth-child(2) {
+  left: 45%;
+  width: 20vw;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 245, 200, 0.35) 0%,
+    rgba(255, 245, 200, 0.1) 40%,
+    transparent 80%
+  );
+  animation-delay: -10s;
+  animation-duration: 45s, 35s;
+  opacity: 0.6;
+}
+
+.tyndall-beam:nth-child(3) {
+  left: -5%;
+  width: 45vw;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 245, 200, 0.2) 0%,
+    rgba(255, 245, 200, 0.05) 25%,
+    transparent 60%
+  );
+  animation-delay: -20s;
+  animation-duration: 55s, 40s;
+  opacity: 0.4;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; filter: blur(90px) brightness(1); }
+  50% { opacity: 0.6; filter: blur(70px) brightness(1.3); }
+}
+
+@keyframes sway {
+  from { transform: rotate(-37deg) translateX(-15px); }
+  to { transform: rotate(-33deg) translateX(15px); }
+}
+
+/* Floating Dust Motes (Tyndall particles) - Glowing */
+.dust-motes {
+  position: absolute;
+  inset: 0;
+}
+
+.mote {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  animation: float-mote var(--duration) linear infinite;
+}
+
+@keyframes float-mote {
+  0% { transform: translate(0, 0) scale(0); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translate(var(--x), var(--y)) scale(1.5); opacity: 0; }
+}
+
+/* Refractive Light Effect - Top (Dynamic Glow) */
+.refractive-light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40vh;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 230, 150, 0.04) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 3;
+  filter: blur(50px);
+  animation: shimmer-glow 25s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer-glow {
+  0% { opacity: 0.4; transform: scaleY(1); }
+  100% { opacity: 0.8; transform: scaleY(1.15); }
+}
+
+/* Shimmering Sparkles */
+.sparkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.sparkle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fff, 0 0 20px #ffd700;
+  animation: twinkle var(--duration) ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 0.8; transform: scale(1.5); }
+}
+
+/* Corner Ornaments - Brighter Gold */
+.corner-ornament {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #d4af37;
+  opacity: 0.6;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.corner-tl { top: 0; left: 0; border-right: 0; border-bottom: 0; }
+.corner-tr { top: 0; right: 0; border-left: 0; border-bottom: 0; }
+.corner-bl { bottom: 0; left: 0; border-right: 0; border-top: 0; }
+.corner-br { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+
+.corner-ornament::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #f1e4d1;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #f1e4d1;
+}
+
+.corner-tl::after { top: -3px; left: -3px; }
+.corner-tr::after { top: -3px; right: -3px; }
+.corner-bl::after { bottom: -3px; left: -3px; }
+.corner-br::after { bottom: -3px; right: -3px; }
+
+/* Elegant Separator - Glowing Gold */
+.octo-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #d4af37 50%, transparent 100%);
+  margin: 6rem 0;
+  position: relative;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.octo-divider::after {
+  content: '◈';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #3d342a;
+  padding: 0 2.5rem;
+  color: #f1e4d1;
+  font-size: 1.4rem;
+  text-shadow: 0 0 20px rgba(241, 228, 209, 1), 0 0 10px #d4af37;
+}
+
+/* Tab Navigation - Brighter */
+.octo-tab {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #d4c4a8;
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  padding: 1rem 3rem;
+  position: relative;
+  opacity: 0.7;
+}
+
+.octo-tab:hover {
+  color: #fff;
+  opacity: 1;
+  letter-spacing: 0.5em;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 10px #d4af37;
+}
+
+.octo-tab-active {
+  color: #fff;
+  opacity: 1;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 15px #d4af37;
+}
+
+.octo-tab-active::before,
+.octo-tab-active::after {
+  content: '⟢';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #d4af37;
+  font-size: 1.4rem;
+  transition: all 0.5s ease;
+  text-shadow: 0 0 15px #d4af37;
+}
+
+.octo-tab-active::before { left: 0; }
+.octo-tab-active::after { right: 0; transform: translateY(-50%) scaleX(-1); }
+
+/* Language Switcher Button */
+header .octo-btn {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Content Flow */
+.octo-flow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 12rem;
+  position: relative;
+}
+
+/* Stat Bar - Glowing Gold */
+.octo-bar-bg {
+  height: 2px;
+  background: rgba(212, 175, 55, 0.1);
+  width: 100%;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.octo-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #d4af37, #fff, #d4af37);
+  background-size: 200% 100%;
+  animation: shimmer-bar 3s linear infinite;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+  position: relative;
+}
+
+@keyframes shimmer-bar {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+.octo-bar-fill::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #fff, 0 0 10px #ffd700;
+}
+
+/* Pixel Art Sprite - Brighter Filter */
+.pixel-sprite {
+  image-rendering: pixelated;
+  filter: contrast(1.1) brightness(1.1) drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
+}
+
+/* Advanced Button - Octopath Style */
+.octo-btn {
+  position: relative;
+  padding: 1.25rem 3.5rem;
+  background: transparent;
+  color: #d4af37;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.octo-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  transition: all 0.6s ease;
+}
+
+.octo-btn::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border: 1px solid #fff;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: all 0.4s ease;
+}
+
+.octo-btn:hover {
+  color: #fff;
+  letter-spacing: 0.6em;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.octo-btn:hover::before {
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.1);
+  box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.octo-btn:hover::after {
+  opacity: 0.5;
+  transform: scale(1);
+}
+
+.octo-btn:active {
+  transform: scale(0.96);
+  filter: brightness(1.2);
+}
+
+/* Shimmer Sweep Effect */
+.shimmer-sweep {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: none;
+}
+
+.octo-btn:hover .shimmer-sweep {
+  left: 150%;
+  transition: left 0.8s ease-in-out;
+}
+
+/* Interactive List Item */
+.octo-list-item {
+  padding: 3.5rem 2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  cursor: pointer;
+  background: transparent;
+}
+
+.octo-list-item:hover {
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.15) 0%, transparent 100%);
+  transform: translateX(15px);
+  padding-left: 4rem;
+}
+
+.octo-list-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 1px;
+  background: #d4af37;
+  transition: width 0.6s ease;
+  box-shadow: 0 0 10px #d4af37;
+}
+
+.octo-list-item:hover::after {
+  width: 100%;
+}
+
+/* Tab Interaction */
+.octo-tab {
+  padding: 1.25rem 3.5rem;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.octo-tab:active {
+  transform: translateY(2px) scale(0.98);
+}
+
+/* Glow Pulse Animation */
+@keyframes glow-pulse {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.4)); }
+  50% { filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8)); }
+}
+
+.pixel-sprite {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+.italic-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  opacity: 0.8;
+}
