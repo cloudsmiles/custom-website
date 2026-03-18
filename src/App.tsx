@@ -5,7 +5,8 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
+import { CanvasBackground } from './components/CanvasBackground';
+import {
   User, 
   Compass, 
   Scroll, 
@@ -36,73 +37,6 @@ import {
 import { translations, attributesConfig, defaultLang } from './i18n';
 
 // --- Components ---
-
-const TyndallEffect = () => {
-  const [motes] = useState(() => 
-    Array.from({ length: 60 }).map((_, i) => ({
-      id: i,
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      x: `${(Math.random() - 0.5) * 150}px`,
-      y: `${(Math.random() - 0.5) * 150}px`,
-      duration: `${30 + Math.random() * 40}s`,
-      delay: `${Math.random() * -40}s`,
-    }))
-  );
-
-  return (
-    <div className="tyndall-container">
-      <div className="tyndall-beam" />
-      <div className="tyndall-beam" />
-      <div className="tyndall-beam" />
-      <div className="dust-motes">
-        {motes.map((m) => (
-          <div 
-            key={m.id} 
-            className="mote" 
-            style={{ 
-              top: m.top, 
-              left: m.left, 
-              '--x': m.x,
-              '--y': m.y,
-              '--duration': m.duration,
-              animationDelay: m.delay 
-            } as any} 
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const Sparkles = () => {
-  const [sparkleList] = useState(() => 
-    Array.from({ length: 30 }).map((_, i) => ({
-      id: i,
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      duration: `${2 + Math.random() * 4}s`,
-      delay: `${Math.random() * 5}s`,
-    }))
-  );
-
-  return (
-    <div className="sparkles">
-      {sparkleList.map((s) => (
-        <div 
-          key={s.id} 
-          className="sparkle" 
-          style={{ 
-            top: s.top, 
-            left: s.left, 
-            '--duration': s.duration,
-            animationDelay: s.delay 
-          } as any} 
-        />
-      ))}
-    </div>
-  );
-};
 
 const StatBar = ({ label, value, max }: { label: string; value: number; max: number }) => (
   <div className="mb-8 group cursor-default">
@@ -431,15 +365,10 @@ export default function App() {
 
   return (
     <div className="octo-container">
+      <CanvasBackground />
       <div className="vignette" />
       <div className="parchment" />
-      <div className="refractive-light" />
-      <TyndallEffect />
-      <Sparkles />
       <div className="noise" />
-      <div className="tilt-shift-top" />
-      <div className="tilt-shift-bottom" />
-      <div className="particles" />
 
       {/* Corner Ornaments */}
       <div className="corner-ornament corner-tl m-4 sm:m-6 md:m-8 lg:m-10" />
@@ -551,10 +480,11 @@ export default function App() {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
-            initial={{ opacity: 0, y: 80, filter: 'blur(30px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            exit={{ opacity: 0, y: -80, filter: 'blur(30px)' }}
-            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, filter: 'blur(20px)' }}
+            animate={{ opacity: 1, filter: 'blur(0px)' }}
+            exit={{ opacity: 0, filter: 'blur(20px)' }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            style={{ willChange: 'filter, opacity' }}
           >
             {activeTab === 'traveler' && <TravelerTab lang={lang} />}
             {activeTab === 'skills' && <SkillsTab lang={lang} />}
