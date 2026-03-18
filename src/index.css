@@ -1,4 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400&display=swap');
+/* 本地化 Google Fonts，避免 CORS 问题 */
+@font-face {
+  font-family: 'Cinzel';
+  src: url('/fonts/Cinzel-Regular.woff2') format('woff2'),
+    url('/fonts/Cinzel-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cinzel';
+  src: url('/fonts/Cinzel-Bold.woff2') format('woff2'),
+    url('/fonts/Cinzel-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-Regular.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-Light.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-SemiBold.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-Italic.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2'),
+    url('/fonts/JetBrainsMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 @theme {
@@ -23,8 +86,10 @@ body {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* Octopath Traveler HD-2D Aesthetic - Bright & Shimmering */
@@ -32,8 +97,8 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: 
-    radial-gradient(circle at center, transparent 0%, rgba(255,248,230,0.1) 100%),
+  background:
+    radial-gradient(circle at center, transparent 0%, rgba(255, 248, 230, 0.1) 100%),
     linear-gradient(to bottom, #2d241a 0%, #4a3d2c 100%);
   padding: 4rem 1rem 6rem 1rem;
   overflow: hidden;
@@ -60,7 +125,7 @@ body {
 .vignette {
   position: fixed;
   inset: 0;
-  background: 
+  background:
     radial-gradient(circle at 50% 50%, transparent 40%, rgba(45, 36, 26, 0.4) 90%),
     radial-gradient(circle at 50% 50%, transparent 0%, rgba(74, 61, 44, 0.6) 130%);
   pointer-events: none;
@@ -82,24 +147,20 @@ body {
   left: 15%;
   width: 35vw;
   height: 200vh;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 245, 200, 0.25) 0%,
-    rgba(255, 245, 200, 0.08) 30%,
-    transparent 70%
-  );
+  background: linear-gradient(to bottom,
+      rgba(255, 245, 200, 0.25) 0%,
+      rgba(255, 245, 200, 0.08) 30%,
+      transparent 70%);
   /* Mask to keep the beam shape (soft edges on sides) */
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 50%,
-    transparent 100%
-  );
+  mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 50%,
+      transparent 100%);
   transform-origin: top center;
   transform: rotate(-35deg);
   filter: blur(90px);
   mix-blend-mode: screen;
-  animation: 
+  animation:
     sway 35s ease-in-out infinite alternate,
     pulse-glow 25s ease-in-out infinite alternate;
 }
@@ -107,12 +168,10 @@ body {
 .tyndall-beam:nth-child(2) {
   left: 45%;
   width: 20vw;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 245, 200, 0.35) 0%,
-    rgba(255, 245, 200, 0.1) 40%,
-    transparent 80%
-  );
+  background: linear-gradient(to bottom,
+      rgba(255, 245, 200, 0.35) 0%,
+      rgba(255, 245, 200, 0.1) 40%,
+      transparent 80%);
   animation-delay: -10s;
   animation-duration: 45s, 35s;
   opacity: 0.6;
@@ -121,25 +180,37 @@ body {
 .tyndall-beam:nth-child(3) {
   left: -5%;
   width: 45vw;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 245, 200, 0.2) 0%,
-    rgba(255, 245, 200, 0.05) 25%,
-    transparent 60%
-  );
+  background: linear-gradient(to bottom,
+      rgba(255, 245, 200, 0.2) 0%,
+      rgba(255, 245, 200, 0.05) 25%,
+      transparent 60%);
   animation-delay: -20s;
   animation-duration: 55s, 40s;
   opacity: 0.4;
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.3; filter: blur(90px) brightness(1); }
-  50% { opacity: 0.6; filter: blur(70px) brightness(1.3); }
+
+  0%,
+  100% {
+    opacity: 0.3;
+    filter: blur(90px) brightness(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    filter: blur(70px) brightness(1.3);
+  }
 }
 
 @keyframes sway {
-  from { transform: rotate(-37deg) translateX(-15px); }
-  to { transform: rotate(-33deg) translateX(15px); }
+  from {
+    transform: rotate(-37deg) translateX(-15px);
+  }
+
+  to {
+    transform: rotate(-33deg) translateX(15px);
+  }
 }
 
 /* Floating Dust Motes (Tyndall particles) - Glowing */
@@ -160,10 +231,23 @@ body {
 }
 
 @keyframes float-mote {
-  0% { transform: translate(0, 0) scale(0); opacity: 0; }
-  10% { opacity: 0.6; }
-  90% { opacity: 0.6; }
-  100% { transform: translate(var(--x), var(--y)) scale(1.5); opacity: 0; }
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
+  90% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1.5);
+    opacity: 0;
+  }
 }
 
 /* Refractive Light Effect - Top (Dynamic Glow) */
@@ -173,12 +257,10 @@ body {
   left: 0;
   right: 0;
   height: 40vh;
-  background: radial-gradient(
-    ellipse at 50% 0%,
-    rgba(255, 255, 255, 0.12) 0%,
-    rgba(255, 230, 150, 0.04) 50%,
-    transparent 100%
-  );
+  background: radial-gradient(ellipse at 50% 0%,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 230, 150, 0.04) 50%,
+      transparent 100%);
   pointer-events: none;
   z-index: 3;
   filter: blur(50px);
@@ -186,8 +268,15 @@ body {
 }
 
 @keyframes shimmer-glow {
-  0% { opacity: 0.4; transform: scaleY(1); }
-  100% { opacity: 0.8; transform: scaleY(1.15); }
+  0% {
+    opacity: 0.4;
+    transform: scaleY(1);
+  }
+
+  100% {
+    opacity: 0.8;
+    transform: scaleY(1.15);
+  }
 }
 
 /* Shimmering Sparkles */
@@ -210,8 +299,17 @@ body {
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0; transform: scale(0); }
-  50% { opacity: 0.8; transform: scale(1.5); }
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.5);
+  }
 }
 
 /* Corner Ornaments - Brighter Gold */
@@ -239,10 +337,33 @@ body {
   }
 }
 
-.corner-tl { top: 0; left: 0; border-right: 0; border-bottom: 0; }
-.corner-tr { top: 0; right: 0; border-left: 0; border-bottom: 0; }
-.corner-bl { bottom: 0; left: 0; border-right: 0; border-top: 0; }
-.corner-br { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+.corner-tl {
+  top: 0;
+  left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.corner-tr {
+  top: 0;
+  right: 0;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.corner-bl {
+  bottom: 0;
+  left: 0;
+  border-right: 0;
+  border-top: 0;
+}
+
+.corner-br {
+  bottom: 0;
+  right: 0;
+  border-left: 0;
+  border-top: 0;
+}
 
 .corner-ornament::after {
   content: '';
@@ -254,10 +375,25 @@ body {
   box-shadow: 0 0 15px #f1e4d1;
 }
 
-.corner-tl::after { top: -3px; left: -3px; }
-.corner-tr::after { top: -3px; right: -3px; }
-.corner-bl::after { bottom: -3px; left: -3px; }
-.corner-br::after { bottom: -3px; right: -3px; }
+.corner-tl::after {
+  top: -3px;
+  left: -3px;
+}
+
+.corner-tr::after {
+  top: -3px;
+  right: -3px;
+}
+
+.corner-bl::after {
+  bottom: -3px;
+  left: -3px;
+}
+
+.corner-br::after {
+  bottom: -3px;
+  right: -3px;
+}
 
 /* Elegant Separator - Glowing Gold */
 .octo-divider {
@@ -334,8 +470,14 @@ body {
   text-shadow: 0 0 15px #d4af37;
 }
 
-.octo-tab-active::before { left: 0; }
-.octo-tab-active::after { right: 0; transform: translateY(-50%) scaleX(-1); }
+.octo-tab-active::before {
+  left: 0;
+}
+
+.octo-tab-active::after {
+  right: 0;
+  transform: translateY(-50%) scaleX(-1);
+}
 
 /* Language Switcher Button */
 header .octo-btn {
@@ -375,8 +517,13 @@ header .octo-btn {
 }
 
 @keyframes shimmer-bar {
-  0% { background-position: 100% 0; }
-  100% { background-position: -100% 0; }
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
 }
 
 .octo-bar-fill::after {
@@ -462,12 +609,10 @@ header .octo-btn {
   left: -100%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transform: skewX(-25deg);
   transition: none;
 }
@@ -521,8 +666,15 @@ header .octo-btn {
 
 /* Glow Pulse Animation */
 @keyframes glow-pulse {
-  0%, 100% { filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.4)); }
-  50% { filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8)); }
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.4));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));
+  }
 }
 
 .pixel-sprite {
