@@ -230,6 +230,7 @@ const ProjectsTab = ({ lang }: { lang: string }) => {
     <div className="space-y-20">
       {[
         { id: t.project1Id, title: t.project1Title, date: t.project1Date, desc: t.project1Desc, url: 'http://159.75.178.17/qcard' },
+        { id: t.project2Id, title: t.project2Title, date: t.project2Date, desc: t.project2Desc, url: 'http://159.75.178.17/pkms' },
       ].map((project, idx) => (
         <motion.a
           initial={{ opacity: 0, x: -30 }}

@@ -54,6 +54,10 @@ export const translations = {
     project1Title: 'QCard游戏平台',
     project1Date: '2026 年至今',
     project1Desc: '一个基于 Go 和 WebSocket 的宏伟建筑，构建支持斗地主、麻将等多种游戏模式的实时对战平台。这是技术与创造力的结晶，展现了全栈开发的深厚功底。',
+    project2Id: 'II',
+    project2Title: 'Sync Grid 石盘图鉴',
+    project2Date: '2026 年至今',
+    project2Desc: '一座把榜单 Excel 重新编织的图鉴殿堂。自动读取表格中的头像与数据，借助 ResNet50 视觉秘术将每一行辨认匹配到对应的宝可梦拍组，再以更友好的方式呈现——无需在冰冷的表格中翻找，便能轻松查询每对拍组的石盘数据与等级排名，令繁杂数据井然有序、触手可及。',
     readChronicle: '阅读编年史',
     
     // 联系方式
@@ -124,6 +128,10 @@ export const translations = {
     project1Title: 'The QCard Game Platform',
     project1Date: '2026 - Present',
     project1Desc: 'A grand architecture built on Go and WebSocket, constructing a real-time battle platform supporting multiple game modes like Fighting Landlord and Mahjong. This is the crystallization of technology and creativity, demonstrating profound full-stack development expertise.',
+    project2Id: 'II',
+    project2Title: 'The Sync Grid Archive',
+    project2Date: '2026 - Present',
+    project2Desc: 'A hall of archives that reweaves the ranking Excel into a friendlier index. It reads the portraits and data from each spreadsheet row, identifies the matching sync pair through the deep-vision arts of ResNet50, and presents it all in a gentler form — no more digging through cold tables, for every sync pair\'s grid data and rank is one easy query away, turning tangled rows into tidy, reachable knowledge.',
     readChronicle: 'READ THE CHRONICLE',
     
     // Contact
@@ -149,14 +157,14 @@ export const attributesConfig = {
     curiosity: { value: 95, max: 100 },
     resilience: { value: 88, max: 100 },
     social: { value: 72, max: 100 },  // 社交能力：中等偏上
-    stamina: { value: 68, max: 100 },  // 体力/操作：中等
+    stamina: { value: 72, max: 100 },  // 体力/操作：中等
   },
   en: {
     knowledge: { value: 85, max: 100 },
     curiosity: { value: 95, max: 100 },
     resilience: { value: 88, max: 100 },
     social: { value: 72, max: 100 },
-    stamina: { value: 68, max: 100 },
+    stamina: { value: 72, max: 100 },
   },
 };
 
